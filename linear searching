@@ -1,0 +1,35 @@
+#include<stdio.h>
+int ls(int a[], int item, int size)
+{
+	int i;
+	for(int i=0; i<size; i++)
+	{
+		if(a[i]==item)
+		return i;
+	}
+	return -1;
+}
+void main()
+{
+	int n,s;
+	printf("\nEnter the size:-");
+	scanf("%d",&n);
+	int a[n];
+	printf("\n Enter element:-");
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("\n List contains:\n");
+	for(int i=0;i<n;i++)
+	{
+		printf("%3d",a[i]);
+	}
+	printf("\nEnter search item:");
+	scanf("%d",&s);
+	int m=ls(a,s,n);
+	if(m==-1)
+	printf("\n Search data not found.");
+	else
+	printf("\n Search data found on the location %d",m+1);
+}
